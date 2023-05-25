@@ -7,7 +7,7 @@ $(document).ready(function () {
     $("#tHead").css("visibility", "hidden");
 
     //Alle Berufe von der Api mit Json laden
-    $.getJSON("http://sandbox.gibm.ch/berufe.php")
+    $.getJSON("https://sandbox.gibm.ch/berufe.php")
         .done(
             function (data, textStatus, jqXHR) {
 
@@ -52,7 +52,7 @@ $(document).ready(function () {
         $("#KAu option:not(.first)").remove();
         $("#KAu").val("0")
 
-        $.getJSON("http://sandbox.gibm.ch/klassen.php?beruf_id=" + id)
+        $.getJSON("https://sandbox.gibm.ch/klassen.php?beruf_id=" + id)
             .done(
                 function (data, textStatus, jqXHR) {
 
@@ -84,7 +84,7 @@ $(document).ready(function () {
 
         $('a:eq(1)').text(moment(currentDate).format('WW-YYYY'));
 
-        $.getJSON("http://sandbox.gibm.ch/tafel.php?klasse_id=" + id + "&woche=" + moment(currentDate).format('ww-yyyy'))
+        $.getJSON("https://sandbox.gibm.ch/tafel.php?klasse_id=" + id + "&woche=" + moment(currentDate).format('ww-yyyy'))
             .done(
                 function (data, textStatus, jqXHR) {
 
