@@ -4,13 +4,13 @@ $(document).ready(function () {
     //Unnötige Htmlelemnte ausblenden
     $("#klSel").css("visibility", "hidden");
     $("#pagi").css("visibility", "hidden");
-    $("#tHead").css("visibility", "hidden");
+    $("#table").css("visibility", "hidden");
 
     //Alle Berufe von der Api mit Json laden
     $.getJSON("https://sandbox.gibm.ch/berufe.php")
         .done(
             function (data, textStatus, jqXHR) {
-
+                $('#notification').html(''); 
                 if ($.isEmptyObject(data)) {
 
                     $('#Bgr').css("visibility", "hidden");
@@ -55,7 +55,7 @@ $(document).ready(function () {
         $.getJSON("https://sandbox.gibm.ch/klassen.php?beruf_id=" + id)
             .done(
                 function (data, textStatus, jqXHR) {
-
+                    $('#notification').html(''); 
                     if ($.isEmptyObject(data)) {
                         $('#notification').html("<div class='alert alert-primary' role='alert'>Zur Zeit können keine Klassen gefunden werden</div>")
 
@@ -87,11 +87,11 @@ $(document).ready(function () {
         $.getJSON("https://sandbox.gibm.ch/tafel.php?klasse_id=" + id + "&woche=" + moment(currentDate).format('ww-yyyy'))
             .done(
                 function (data, textStatus, jqXHR) {
-
+                    $('#notification').html(''); 
                     if ($.isEmptyObject(data)) {
 
                         $('#notification').html("<div class='alert alert-primary' role='alert'>Zur Zeit können keine Daten gefunden werden</div>")
-                        $("#tHead").css("visibility", "hidden");
+                        $("#table").css("visibility", "hidden");
                     } else {
 
                         $.each(data, function (key, TT) {
@@ -100,7 +100,7 @@ $(document).ready(function () {
                         });
 
                         $("#pagi").css("visibility", "visible");
-                        $("#tHead").css("visibility", "visible");
+                        $("#table").css("visibility", "visible");
                     }
                 }).fail(function () {
                     $('#notification').html("<div class='alert alert-danger' role='alert'>Bei der Abfrage ist etwas schiefgelaufen :( </div>")
