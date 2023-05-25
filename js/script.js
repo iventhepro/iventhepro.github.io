@@ -124,7 +124,7 @@ $(document).ready(function () {
                         //loop über Daten
                         $.each(data, function (key, TT) {
                             //Daten als tb dem table anfügen
-                            $('#timetable tbody').append("<tr><td>" + moment(currentDate).format('DD.MM.YYYY') + "</td><td>" + getWochentag(TT.tafel_wochentag) + "</td><td>" + TT.tafel_von + "</td><td>" + TT.tafel_bis + "</td><td>" + TT.tafel_lehrer + "</td><td>" + TT.tafel_longfach + "</td><td>" + TT.tafel_raum + "</td></tr>");
+                            $('#timetable tbody').append("<tr><td>" + moment(TT.tafel_datum).format('DD.MM.YYYY') + "</td><td>" + getWochentag(TT.tafel_wochentag) + "</td><td>" + TT.tafel_von + "</td><td>" + TT.tafel_bis + "</td><td>" + TT.tafel_lehrer + "</td><td>" + TT.tafel_longfach + "</td><td>" + TT.tafel_raum + "</td></tr>");
                         });
                         //Html elemnte einblenden 
                         $("#pagi").css("visibility", "visible");
