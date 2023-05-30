@@ -48,6 +48,10 @@ $(document).ready(function () {
         //localstorge anpassen
         localStorage.setItem("BID", $('#Bgr').val());
         localStorage.removeItem("KID");
+        $("tr:not(#tHead)").remove();
+        $("#pagi").css("visibility", "hidden");
+        $("#table").css("visibility", "hidden");
+
         //klassen neu setzten
         setKlassenOptions($('#Bgr').val())
     });
@@ -153,11 +157,11 @@ $(document).ready(function () {
         setTimeTable(localStorage.getItem("KID"));
 
     });
-     //auf click hören für nächste woche
+    //auf click hören für nächste woche
     $('li.page-item:last').on('click', function () {
-         //stundenplan neu setzten
+        //stundenplan neu setzten
         currentDate = moment(currentDate).add(1, 'weeks');
-         //stundenplan neu setzten
+        //stundenplan neu setzten
         setTimeTable(localStorage.getItem("KID"));
     });
 
