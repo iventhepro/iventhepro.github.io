@@ -123,7 +123,7 @@ $(document).ready(function () {
                         //meldung ausgeben
                         $('#notification').html("<div class='alert alert-primary' role='alert'>Zur Zeit können keine Daten gefunden werden</div>")
                         //verstecken von table
-                        $("#table").css("visibility", "hidden");
+                        $("#timetable").css("visibility", "hidden");
                     } else {
                         //loop über Daten
                         $.each(data, function (key, TT) {
@@ -132,7 +132,7 @@ $(document).ready(function () {
                         });
                         //Html elemnte einblenden 
                         $("#pagi").css("visibility", "visible");
-                        $("#table").css("visibility", "visible");
+                        $("#timetable").css("visibility", "visible");
                     }
                 }).fail(function () {
                     //Fehlermeldung ausgeben
