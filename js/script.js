@@ -6,7 +6,7 @@ $(document).ready(function () {
     //Htmlelemnte ausblenden
     $("#klSel").css("visibility", "hidden");
     $("#pagi").css("visibility", "hidden");
-    $("#table").css("visibility", "hidden");
+    $("#timetable").css("visibility", "hidden");
 
     //Alle Berufe von der Api mit Json laden
     $.getJSON("https://sandbox.gibm.ch/berufe.php")
@@ -50,7 +50,7 @@ $(document).ready(function () {
         localStorage.removeItem("KID");
         $("tr:not(#tHead)").remove();
         $("#pagi").css("visibility", "hidden");
-        $("#table").css("visibility", "hidden");
+        $("#timetable").css("visibility", "hidden");
 
         //klassen neu setzten
         setKlassenOptions($('#Bgr').val())
